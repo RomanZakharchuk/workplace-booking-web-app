@@ -1,0 +1,12 @@
+@use "src/scss/modules/sizes";
+
+.main {
+  width: 100%;
+  min-height: calc(100vh - 79px);
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .main {
+    min-height: calc(100vh - 149px);
+  }
+}

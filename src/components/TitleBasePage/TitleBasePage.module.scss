@@ -1,0 +1,11 @@
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/colors";
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  line-height: 48px;
+  color: colors.$big-stone;
+  margin-bottom: 33px;
+}

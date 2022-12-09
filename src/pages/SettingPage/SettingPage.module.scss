@@ -1,0 +1,46 @@
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/colors";
+
+.wrapHeader {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.wrapPath {
+  @include display.displayFlex($alignItems: center);
+}
+
+.pathTitle {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+  margin: 0 10px 5px 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    border-bottom: 3px solid colors.$dodger-blue;
+    border-radius: 100px;
+    position: absolute;
+    top: 28px;
+    left: 0;
+  }
+}
+
+.line {
+  width: 100%;
+  border-bottom: 2px solid colors.$white-lilac1;
+  margin-bottom: 25px;
+}
+
+.formsContainer {
+  @include display.displayFlex();
+
+  & > form {
+    &:first-child {
+      margin-right: 26px;
+    }
+  }
+}

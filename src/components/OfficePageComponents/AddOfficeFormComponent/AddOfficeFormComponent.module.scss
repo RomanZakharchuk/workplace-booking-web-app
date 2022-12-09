@@ -1,0 +1,96 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/display";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/letterSpacing";
+@use 'src/scss/modules/input';
+
+.Form {
+  width: 427px;
+  height: 687px;
+  border: 2px solid colors.$hawkes-blue;
+  background: colors.$white;
+  border-radius: 30px;
+  padding: 25px 20px 30px 20px;
+  @include display.displayFlex($direction: column, $justifyContent: space-between);
+}
+
+.wrapBtn {
+  @include display.displayFlex($direction: column);
+}
+
+.wrapperForm {
+  @include display.displayFlex($direction: column);
+}
+
+.wrapNumber,
+.wrapAddress,
+.wrapStatus {
+  @include display.displayFlex($direction: column);
+}
+
+.wrapNumber,
+.wrapAddress,
+.wrapStatus {
+  margin-bottom: 20px;
+}
+
+.wrapWorkingTime {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.wrapInputOpenFrom,
+.wrapInputCloseTo {
+  width: 49%;
+}
+
+.label,
+.labelWorkingTime,
+.labelStatus {
+  @include fonts.medium();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.dropdown,
+.option {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+  padding: 0 20px;
+}
+
+.btnCancel,
+.btnAdd {
+  height: 56px;
+}
+
+.btnCancel {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$tropical-blue;
+
+  &:hover {
+    color: colors.$dodger-blue;
+  }
+}
+
+.input {
+  @include input.input();
+}
+
+.btnAdd {
+  @include btnStyle.btn();
+}
+
+.daysOfWeekContainer {
+  @include display.displayFlex($justifyContent: space-between);
+}

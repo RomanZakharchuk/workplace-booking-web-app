@@ -1,0 +1,94 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.userContainer {
+  width: 100%;
+  height: 64px;
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 0 20px 0 30px;
+  @include display.displayFlex($alignItems: center);
+  margin-right: 15px;
+
+  &:hover {
+    border: 2px solid colors.$malibu;
+  }
+}
+
+.imageBlock {
+  width: 100%;
+  max-width: 100px;
+}
+
+.firstNameBlock {
+  width: 100%;
+  max-width: 160px;
+}
+
+.lastNameBlock {
+  width: 100%;
+  max-width: 200px;
+}
+
+.organizationBlock {
+  width: 100%;
+  max-width: 140px;
+}
+
+.emailBlock {
+  width: 100%;
+  max-width: 320px;
+}
+
+.statusBlock {
+  width: 100%;
+  max-width: 182px;
+}
+
+.text {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+}
+
+.status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+}
+
+.available {
+  color: colors.$de-york;
+  background: colors.$snowy-mint;
+}
+
+.notAvailable {
+  color: colors.$salmon;
+  background: colors.$fair-pink;
+}
+
+.avatarContainer {
+  width: 35px;
+  height: 35px;
+  line-height: 0;
+  opacity: 0.75;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.dotsBtn {
+  padding: 5px 10px;
+  line-height: 0;
+  cursor: pointer;
+}

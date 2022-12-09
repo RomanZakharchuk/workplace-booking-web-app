@@ -1,0 +1,16 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/letterSpacing';
+
+@mixin btn() {
+  background: colors.$dodger-blue;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  @include fonts.semiBold();
+  @include fontsSize.textSize18();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$white;
+  transition: background-color 0.5s;
+}

@@ -1,0 +1,112 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.roomContainer {
+  width: 100%;
+  height: 64px;
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 0 20px 0 30px;
+  @include display.displayFlex($justifyContent: space-between, $alignItems: center);
+  margin-right: 15px;
+
+  &:hover {
+    border: 2px solid colors.$malibu;
+  }
+}
+
+.text {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+}
+
+.nameBlock {
+  width: 100%;
+  max-width: 150px;
+}
+
+.statusBlock {
+  width: 100%;
+  max-width: 290px;
+}
+
+.seatsBlock {
+  width: 100%;
+  max-width: 150px;
+}
+
+.addressBlock {
+  width: 100%;
+  max-width: 300px;
+}
+
+.workTimeBlock {
+  width: 100%;
+  max-width: 200px;
+}
+
+.dotsContainer {
+  padding: 5px 10px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.wrapBtns {
+  position: relative;
+}
+
+.editBlock {
+  position: absolute;
+  width: 88px;
+  border-radius: 6px;
+  right: -32px;
+  top: 44px;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 12px solid colors.$dodger-blue;
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    top: -12px;
+    width: 0;
+  }
+}
+
+.WrapBtn {
+  @include display.displayFlex($alignItems: center);
+  background: colors.$white;
+  cursor: pointer;
+
+  &:first-child {
+    border-radius: 5px 5px 0 0;
+    border-right: 1px solid colors.$dodger-blue;
+    border-left: 1px solid colors.$dodger-blue;
+    border-top: 1px solid colors.$dodger-blue;
+  }
+
+  &:last-child {
+    border-radius: 0 0 5px 5px;
+    border-right: 1px solid colors.$dodger-blue;
+    border-left: 1px solid colors.$dodger-blue;
+    border-bottom: 1px solid colors.$dodger-blue;
+  }
+}
+
+.wrapIcon {
+  line-height: 0;
+  margin: 6px 6px 6px 10px;
+}
+
+.editText {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+}

@@ -1,0 +1,123 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/letterSpacing';
+
+.headerNav {
+  @include display.displayFlex($alignItems: center, $justifyContent: space-between);
+  margin-bottom: 50px;
+}
+
+.logoContainer {
+  line-height: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.nav {
+  display: none;
+
+  .navInner {
+    @include display.displayFlex($alignItems: center);
+
+    .list {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      a {
+        @include fonts.regular();
+        @include fontsSize.textSize16();
+        letter-spacing: letterSpacing.$letter01;
+        color: colors.$black;
+      }
+    }
+  }
+}
+
+.singGroup {
+  height: 46px;
+  @include display.displayFlex($alignItems: center, $justifyContent: center);
+  border: 1px solid colors.$dodger-blue;
+  border-radius: 100px;
+  position: relative;
+}
+
+.animationBox {
+  position: absolute;
+  right: -1px;
+  width: 163px;
+  height: 46px;
+  border-radius: 100px;
+  background: colors.$dodger-blue;
+  transition: width 0.5s, right 0.5s ease;
+}
+
+.animationBoxPosition {
+  width: 90px;
+  right: 164px;
+  transition: width 0.5s, right 0.5s ease;
+}
+
+.logInLink,
+.createAccountLink {
+  position: relative;
+  z-index: 1;
+  height: 46px;
+  @include display.displayFlex($alignItems: center, $justifyContent: center);
+
+  span {
+    display: block;
+    @include fonts.semiBold();
+    @include fontsSize.textSize14();
+    letter-spacing: letterSpacing.$letter006;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+}
+
+.logInLink {
+  width: 90px;
+
+  span {
+    color: colors.$dodger-blue;
+    transition: color 1s;
+  }
+
+  .logInLinkColor {
+    color: colors.$white;
+    transition: color 1s;
+  }
+}
+
+.createAccountLink {
+  width: 163px;
+
+  span {
+    color: colors.$white;
+    transition: color 1s;
+  }
+
+  .createAccountLinkColor {
+    color: colors.$dodger-blue;
+    transition: color 1s;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .headerNav {
+    margin-bottom: 156px;
+  }
+
+  .nav {
+    display: block;
+  }
+}
+

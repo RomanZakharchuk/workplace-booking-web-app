@@ -1,0 +1,34 @@
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/colors";
+@use "src/scss/modules/letterSpacing";
+
+@mixin input() {
+  background: colors.$white-lilac1;
+  border: 2px solid colors.$white-lilac2;
+  border-radius: 15px;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 15px 20px;
+
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$dove-gray;
+
+  &:focus {
+    border: 2px solid colors.$dodger-blue;
+  }
+
+  &::placeholder {
+    color: colors.$gray;
+    opacity: 100;
+    transition: opacity 0.4s;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+}

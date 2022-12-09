@@ -1,0 +1,92 @@
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/formContainer";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/input";
+
+.form {
+  @include formContainer.form();
+}
+
+.wrapFile {
+  @include display.displayFlex($direction: column);
+  margin-bottom: 20px;
+}
+
+.label {
+  @include fonts.medium();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  margin: 0 0 10px 20px;
+}
+
+.wrapUpload {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.errorText,
+.errorMsg{
+  @include fonts.regular();
+  font-size: 12px;
+  color: colors.$salmon;
+  margin: 5px 0 0 15px;
+}
+
+.inputUpload {
+  width: 84%;
+  @include input.input();
+  cursor: pointer;
+}
+
+.imageInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapImgUser {
+  width: 55px;
+  height: 55px;
+  line-height: 0;
+  border-radius: 15px;
+  background: colors.$white-lilac1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.companyContainer,
+.numberOfEmployeesContainer,
+.specificationContainer {
+  margin-bottom: 20px;
+}
+
+.input {
+  @include input.input();
+}
+
+.numberOfEmployeesContainer {
+  @include display.displayFlex($direction: column);
+}
+
+.label {
+  @include fonts.medium();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  margin: 0 0 10px 20px;
+}
+
+.btnSubmitContainer {
+  margin-top: 40px;
+}
+
+.btnSubmit {
+  @include btnsSize.btnW130();
+  @include btnStyle.btn();
+}

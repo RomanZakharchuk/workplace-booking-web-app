@@ -1,0 +1,113 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/letterSpacing";
+
+.calendarComponent {
+  margin: 0 15px 15px 0;
+}
+
+//headerCalendarContainer
+.headerCalendarContainer {
+  height: 41px;
+  @include display.displayFlex($justifyContent: space-between, $alignItems: center);
+  background: colors.$white-lilac1;
+  border-radius: 15px;
+  padding: 0 30px;
+  margin-bottom: 10px;
+}
+
+//currentDataContainer
+.currentDataContainer {
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+}
+
+.imageContainer{
+  line-height: 0;
+  margin-right: 5px;
+}
+
+.dataText {
+  @include fonts.semiBold();
+  @include fontsSize.textSize14();
+  color: colors.$nepal;
+}
+
+
+// btnGroupHeaderContainer
+.btnGroupHeaderContainer {
+  width: 161px;
+  border: 1px solid colors.$hawkes-blue;
+  border-radius: 100px;
+  @include display.displayFlex($justifyContent: space-between);
+  overflow: hidden;
+}
+
+.switchBtn {
+  @include btnsSize.btnW76();
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+  @include fonts.semiBold();
+  @include fontsSize.textSize14();
+  letter-spacing: letterSpacing.$letter006;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.isActiveBtn {
+  background: colors.$dodger-blue;
+  color: colors.$white;
+  transition: background-color 0.5s;
+}
+
+.inActiveBtn {
+  color: colors.$nepal;
+  transition: background-color 0.5s;
+}
+
+//calendarContainer
+.calendarContainer {
+  @include display.displayFlex($justifyContent: space-between, $alignItems: center);
+}
+
+.dayItemContainer {
+  @include display.displayFlex();
+}
+
+.btnBack,
+.btnNext {
+  @include btnsSize.btnW103();
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 100px;
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid colors.$malibu;
+  }
+}
+
+.btnBack {
+  margin-bottom: 6px;
+}
+
+.arrowContainer {
+  line-height: 0;
+
+  &:first-child {
+    margin-right: 5px;
+  }
+
+  &:last-child {
+    margin-left: 5px;
+  }
+}
+
+.btnText {
+  @include fonts.semiBold();
+  @include fontsSize.textSize14();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$nepal;
+}

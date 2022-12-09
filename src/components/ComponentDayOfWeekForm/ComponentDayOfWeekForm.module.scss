@@ -1,0 +1,28 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.dayOfWeekContainer {
+  width: 49px;
+  height: 55px;
+  background: colors.$white-lilac1;
+  border: 2px solid colors.$white-lilac2;
+  border-radius: 15px;
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid colors.$malibu;
+  }
+}
+
+.dayOfWeek {
+  width: 100%;
+  height: 100%;
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+  @include fonts.medium();
+  @include fontsSize.textSize14();
+  color: colors.$dove-gray;
+  cursor: pointer;
+}

@@ -1,0 +1,164 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/letterSpacing";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/formContainer";
+@use "src/scss/modules/input";
+
+.form {
+  @include formContainer.form();
+  height: 687px;
+}
+
+.wrapFile {
+  @include display.displayFlex($direction: column);
+  width: 100%;
+  max-width: 387px;
+}
+
+.label {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  padding: 0 0 10px 23px;
+}
+
+.wrapUpload {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.inputUpload {
+  width: 84%;
+  max-width: 320px;
+  @include display.displayFlex($alignItems: center);
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+  cursor: pointer;
+  padding-left: 20px;
+  overflow-x: hidden;
+}
+
+.dropdown,
+.option {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+}
+
+.inputUpload,
+.dropdown {
+  height: 55px;
+  background: colors.$white-lilac1;
+  border: 2px solid colors.$white-lilac2;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 20px;
+
+  &::placeholder {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01;
+    color: colors.$gray;
+  }
+
+  &:focus {
+    border: 2px solid colors.$dodger-blue;
+  }
+}
+
+.input {
+  @include input.input();
+}
+
+.imageInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapImgUser {
+  width: 55px;
+  height: 55px;
+  line-height: 0;
+  border-radius: 15px;
+  background: colors.$white-lilac1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.errorMsg {
+  @include fonts.regular();
+  font-size: 12px;
+  color: colors.$salmon;
+  margin: 5px 0 0 25px;
+}
+
+.fileContainer {
+  @include display.displayFlex($direction: column);
+}
+
+.fileContainer,
+.fullNameContainer,
+.emailContainer,
+.organizationContainer {
+  margin-bottom: 20px;
+}
+
+.firstNaneContainer,
+.lastNameContainer {
+  width: 49%;
+}
+
+.fullNameContainer {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.nameInput {
+  width: 100%;
+  max-width: 189px;
+}
+
+.btnCancel {
+  display: block;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$tropical-blue;
+  margin: 0 auto 20px auto;
+
+  &:hover {
+    color: colors.$dodger-blue;
+  }
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  height: 55px;
+  @include btnStyle.btn();
+}
+
+.errorText {
+  @include fonts.regular();
+  font-size: 12px;
+  color: colors.$salmon;
+  margin: 5px 0 0 15px;
+}
+
+.disabled {
+  background: rgba(73, 138, 254, 0.25);
+}

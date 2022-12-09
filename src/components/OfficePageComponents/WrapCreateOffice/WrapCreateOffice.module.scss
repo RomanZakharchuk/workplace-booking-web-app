@@ -1,0 +1,104 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.wrapOffice {
+  width: 100%;
+  height: 64px;
+  background: colors.$white;
+  border: 2px solid colors.$dodger-blue;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 0 30px;
+  @include display.displayFlex($alignItems: center, $justifyContent: space-between);
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.nameBlock {
+  width: 100%;
+  max-width: 150px;
+}
+
+.roomBlock {
+  width: 100%;
+  max-width: 130px;
+}
+
+.wrapStatusText {
+  width: 100%;
+  max-width: 130px;
+}
+
+.managerBlock {
+  width: 100%;
+  max-width: 270px;
+}
+
+.addressBlock {
+  width: 100%;
+  max-width: 300px;
+}
+
+.workTimeBlock {
+  width: 100%;
+  max-width: 177px;
+}
+
+.editBtn {
+  border: none;
+  background: none;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.nameBlock,
+.statusBlock,
+.roomBlock,
+.managerBlock,
+.addressBlock,
+.workTimeBlock {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  p {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+  }
+}
+
+.nameBlock,
+.roomBlock,
+.addressBlock,
+.workTimeBlock {
+  color: colors.$dove-gray;
+}
+
+.managerBlock {
+  color: colors.$dodger-blue;
+}
+
+.statusClose,
+.statusAvailable,
+.statusNotAvailable {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.statusClose {
+  color: colors.$silver-chalice;
+  background: colors.$seashell;
+}
+
+.statusAvailable {
+  color: colors.$de-york;
+  background: colors.$snowy-mint;
+}
+
+.statusNotAvailable {
+  color: colors.$salmon;
+  background: colors.$fair-pink;
+}

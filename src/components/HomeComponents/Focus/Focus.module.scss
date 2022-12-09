@@ -1,0 +1,114 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+
+.focus {
+  background-size: cover;
+  background: url("../../../../src/assets/png/Union2.png") no-repeat center;
+  @include display.displayFlex($direction: column, $alignItems: center);
+  border-radius: 50px;
+  padding: 75px 0 50px 0;
+  margin: 50px 0;
+
+  &__wrap {
+    max-width: 351px;
+    @include display.displayFlex($direction: column, $alignItems: center);
+
+    ul {
+      margin-bottom: 30px;
+
+      li {
+        @include fonts.semiBold();
+        @include fontsSize.textSize16();
+        text-align: start;
+        letter-spacing: letterSpacing.$letter017;
+        color: colors.$white;
+        list-style: none;
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 18px;
+        }
+
+        &:before {
+          content: url("../../../../src/assets/svg/TickSquare.svg");
+          padding-right: 37px;
+          position: absolute;
+          left: -55px;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$white;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$white;
+  margin-bottom: 30px;
+}
+
+.wrapImg {
+  max-width: 274px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .focus {
+    &__wrap {
+      max-width: 580px;
+    }
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 125%;
+  }
+
+  .wrapImg {
+    max-width: 344px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .focus {
+    flex-direction: row;
+    justify-content: center;
+    padding: 100px 0;
+
+    &__wrap {
+      align-items: start;
+
+      ul {
+        padding-left: 55px;
+      }
+    }
+  }
+
+  .title {
+    padding: 0;
+  }
+
+  .title,
+  .text {
+    text-align: start;
+  }
+}

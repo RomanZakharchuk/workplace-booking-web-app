@@ -1,0 +1,43 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/display";
+
+.importTableContainer {
+  width: 100%;
+  height: 687px;
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 15px;
+  padding: 40px 60px;
+  @include display.displayFlex($direction: column, $alignItems: start);
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h3Size20();
+  color: colors.$big-stone;
+  margin-bottom: 15px;
+}
+
+.text {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+  margin-bottom: 40px;
+}
+
+.link {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dodger-blue;
+  border-bottom: 2px solid colors.$white;
+
+  &:nth-of-type(1) {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    border-bottom: 2px solid colors.$dodger-blue;
+  }
+}

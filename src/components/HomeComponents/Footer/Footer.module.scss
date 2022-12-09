@@ -1,0 +1,121 @@
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+
+.wrapper {
+  @include display.displayFlex($direction: column, $alignItems: center);
+  padding: 30px 0 50px 0;
+
+  &__main,
+  &__menu,
+  &__contacts {
+    margin-bottom: 30px;
+  }
+
+  &__main,
+  &__menu,
+  &__contacts,
+  &__personalArea {
+    @include display.displayFlex($direction: column, $alignItems: center);
+    justify-content: center;
+  }
+
+  &__main {
+    max-width: 341px;
+  }
+}
+
+.logoContainer {
+  line-height: 0;
+  margin-bottom: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h3Size20();
+  letter-spacing: letterSpacing.$letter017;
+  color: colors.$silver-chalice;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$gray;
+  margin: 5px 0 24px 0;
+}
+
+.blockNetworks {
+  @include display.displayFlex($justifyContent: center);
+
+  &__inner {
+    &:not(:last-child) {
+      margin-right: 38px;
+    }
+  }
+}
+
+.link {
+  display: block;
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$silver-chalice;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .wrapper {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    padding: 75px 0 75px 0;
+
+    &__main {
+      max-width: 235px;
+    }
+
+    &__main,
+    &__menu,
+    &__contacts,
+    &__personalArea {
+      align-items: start;
+    }
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .text {
+    text-align: start;
+  }
+
+  .link {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .footerColor {
+    background: colors.$white-lilac1;
+  }
+
+  .wrapper {
+    &__main,
+    &__menu,
+    &__contacts {
+      margin-bottom: 0;
+    }
+  }
+}

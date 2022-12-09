@@ -1,0 +1,22 @@
+import { FC } from "react";
+
+type PropsType = {
+    colorIconSend: string;
+}
+
+const IconSend: FC<PropsType> = ({ colorIconSend }) => {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd"
+                  d="M11.4931 12.438C11.4931 12.438 -0.483595 9.96037 3.67835 7.55782C7.1905 5.53052 19.2945 2.04497 20.9855 2.94557C21.8861 4.63657 18.4005 16.7405 16.3732 20.2527C13.9707 24.4146 11.4931 12.438 11.4931 12.438Z"
+                  stroke={colorIconSend} strokeWidth="1.5" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path d="M11.4941 12.4382L20.9865 2.9458" stroke={colorIconSend}
+                  strokeWidth="1.5" strokeLinecap="round"
+                  strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export { IconSend };

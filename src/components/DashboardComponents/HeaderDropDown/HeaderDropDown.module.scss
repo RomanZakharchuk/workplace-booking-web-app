@@ -1,0 +1,97 @@
+@use "src/scss/modules/display";
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/letterSpacing";
+@use "src/scss/modules/sizes";
+
+.dropdownContainer {
+  display: none;
+  width: 335px;
+  height: 55px;
+  background: colors.$white-lilac1;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdownInner {
+  @include display.displayFlex($alignItems: center);
+  margin-left: 10px;
+}
+
+.dropdownImage {
+  width: 35px;
+  line-height: 0;
+  overflow: hidden;
+  opacity: 0.75;
+  border-radius: 8px;
+  background: colors.$white;
+
+  img {
+    width: 100%;
+  }
+}
+
+.dropdownImage,
+.dropdownIcon {
+  margin-right: 10px;
+}
+
+.dropdownTitle {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+
+  &:nth-of-type(1) {
+    margin-right: 5px;
+  }
+}
+
+.dropdownList {
+  position: absolute;
+  top: 60px;
+  width: 335px;
+  background: colors.$white;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.textContainer {
+  @include display.displayFlex();
+}
+
+.wrapLink {
+  height: 53px;
+  @include display.displayFlex($alignItems: center);
+  padding-left: 17px;
+  text-decoration: none;
+
+  &:hover {
+    background: colors.$dodger-blue;
+  }
+
+  &:nth-of-type(1):hover {
+    border-radius: 15px 15px 0 0;
+  }
+
+  &:nth-of-type(2):hover {
+    border-radius: 0 0 15px 15px;
+  }
+
+  &:hover .dropdownTitle {
+    color: colors.$white;
+  }
+}
+
+.imgWrap {
+  line-height: 0;
+  margin-right: 18px;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH){
+  .dropdownContainer {
+    @include display.displayFlex($alignItems: center, $justifyContent: space-between);
+  }
+}

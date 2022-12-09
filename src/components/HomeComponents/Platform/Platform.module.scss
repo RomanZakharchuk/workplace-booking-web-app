@@ -1,0 +1,85 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+
+.platform {
+  @include display.displayFlex($direction: column, $alignItems: center);
+  max-width: 351px;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$black;
+  margin-bottom: 10px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+  margin-bottom: 40px;
+}
+
+.name {
+  @include fonts.semiBold;
+  @include fontsSize.h3Size20();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$black;
+  margin: 15px 0 10px 0;
+}
+
+.textSmall {
+  max-width: 275px;
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$dove-gray;
+}
+
+.line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background: rgba(102, 102, 102, 0.25);
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .platform {
+    max-width: 580px;
+    padding: 100px 0;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .platformSection {
+    background: colors.$white-lilac1;
+  }
+
+  .line {
+    display: none;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .title {
+    line-height: 64px;
+  }
+
+
+}

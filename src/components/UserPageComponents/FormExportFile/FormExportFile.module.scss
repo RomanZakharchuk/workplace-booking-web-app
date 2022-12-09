@@ -1,0 +1,73 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/letterSpacing";
+@use "src/scss/modules/btnStyle";
+
+.form {
+  width: 427px;
+  height: 687px;
+  border: 2px solid colors.$hawkes-blue;
+  background: colors.$white;
+  border-radius: 30px;
+  padding: 25px 20px 25px 20px;
+  @include display.displayFlex($direction: column, $justifyContent: space-between);
+}
+
+.title {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  margin: 0 0 10px 15px;
+}
+
+.btnCancel {
+  display: block;
+  width: 100%;
+  height: 56px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$tropical-blue;
+
+  &:hover {
+    color: colors.$dodger-blue;
+  }
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  height: 56px;
+  @include btnStyle.btn();
+}
+
+.exportInputContainer {
+  @include display.displayFlex($direction: column)
+}
+
+.dropdown {
+  height: 55px;
+  background: colors.$white-lilac1;
+  border: 2px solid colors.$white-lilac2;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 20px;
+
+  &:focus {
+    border: 2px solid colors.$dodger-blue;
+  }
+}
+
+.dropdown,
+.option {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+}

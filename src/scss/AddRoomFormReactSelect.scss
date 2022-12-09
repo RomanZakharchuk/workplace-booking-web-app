@@ -1,0 +1,131 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/letterSpacing";
+
+.custom-select {
+  &__control {
+    height: 55px !important;
+    background: colors.$white-lilac1 !important;
+    border: 2px solid colors.$white-lilac2 !important;
+    border-radius: 15px !important;
+    padding-left: 20px !important;
+  }
+
+  &__single-value,
+  &__placeholder,
+  &__option {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01 !important;
+    color: colors.$dove-gray !important;
+  }
+
+  &__option {
+    &:hover {
+      background: colors.$silver;
+    }
+  }
+
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__placeholder {
+    margin: 0 !important;
+  }
+
+  &__value-container {
+    padding: 0 !important;
+  }
+
+  &__menu {
+    background: colors.$white-lilac1 !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+  }
+
+  &__menu-list {
+    padding: 0 !important;
+  }
+
+  &__option {
+    height: 55px !important;
+    padding-left: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+
+    &:active {
+      background: none !important;
+    }
+  }
+
+  &__input {
+    caret-color: transparent;
+  }
+}
+
+
+
+.custom-select-map {
+  &__control {
+    height: 55px !important;
+    background: colors.$white-lilac1 !important;
+    border: 2px solid colors.$white-lilac2 !important;
+    border-radius: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  &__indicator-separator {
+    display: none !important;
+  }
+
+  &__indicator {
+    display: none !important;
+  }
+
+  &__value-container {
+    padding: 0 !important;
+  }
+
+  &__placeholder {
+    margin: 0 !important;
+  }
+
+  &__single-value,
+  &__placeholder,
+  &__option,
+  &__input {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01 !important;
+    color: colors.$dove-gray !important;
+  }
+
+  &__input {
+    input {
+      width: 100% !important;
+      @include fonts.medium();
+      @include fontsSize.textSize16();
+      letter-spacing: letterSpacing.$letter01 !important;
+      color: colors.$dove-gray !important;
+    }
+  }
+
+  &__menu {
+    background: colors.$white-lilac1 !important;
+    border-radius: 5px !important;
+    overflow: hidden;
+  }
+
+  &__menu-list {
+    padding: 0 !important;
+  }
+
+  &__option {
+    padding: 15px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}

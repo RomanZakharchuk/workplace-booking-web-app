@@ -1,0 +1,23 @@
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/sizes';
+
+.basePage {
+  width: 100%;
+  max-width: 1890px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: colors.$zircon;
+  padding: 0 12px 0 12px;
+}
+
+.mainContainer {
+  @include display.displayFlex();
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .basePage {
+    padding: 0 60px 0 60px;
+  }
+}

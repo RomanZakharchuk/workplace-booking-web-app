@@ -1,0 +1,30 @@
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/letterSpacing';
+@use 'src/scss/modules/display';
+
+.innerEmployee {
+  @include display.displayFlex($direction: column, $alignItems: center);
+  margin: 0 17px;
+
+  .name {
+    @include fonts.semiBold();
+    @include fontsSize.h3Size20();
+    letter-spacing: letterSpacing.$letter017;
+    color: colors.$black;
+  }
+
+  .position {
+    @include fonts.regular();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter006;
+    color: colors.$black;
+  }
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .innerEmployee {
+  }
+}

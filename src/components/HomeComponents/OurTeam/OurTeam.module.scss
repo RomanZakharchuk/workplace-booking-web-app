@@ -1,0 +1,78 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+
+.ourTeamBackground {
+  background: colors.$white-lilac1;
+}
+
+.ourTeam {
+  @include display.displayFlex($direction: column, $alignItems: center);
+  padding: 75px 0;
+
+  &__description {
+    max-width: 351px;
+    margin-bottom: 40px;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$black;
+  margin-bottom: 10px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .ourTeam {
+    margin-bottom: 100px;
+
+    &__description {
+      max-width: 530px;
+      margin-bottom: 70px;
+    }
+
+    &__wrap {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .ourTeam {
+    margin-bottom: 0;
+    padding: 100px 0;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .ourTeam {
+    &__description {
+      margin-bottom: 70px;
+    }
+  }
+}

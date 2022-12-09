@@ -1,0 +1,86 @@
+@use "src/scss/modules/display";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/letterSpacing";
+@use "src/scss/modules/colors";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/sizes";
+
+.wrapper {
+  width: 100%;
+  max-width: 1190px;
+  height: 100vh;
+  margin: 0 auto;
+  @include display.displayFlex($alignItems: center, $justifyContent: center);
+}
+
+.container {
+  width: 100%;
+  padding: 0 5px;
+  @include display.displayFlex($direction: column, $alignItems: center);
+}
+
+.wrapTitle {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h1Size40();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$big-stone;
+  margin-bottom: 10px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+  margin-bottom: 15px;
+}
+
+.link {
+  color: colors.$dodger-blue;
+  text-decoration: none;
+}
+
+.linkBtn {
+  @include display.displayFlex($alignItems: center, $justifyContent: center);
+  @include btnStyle.btn();
+  @include btnsSize.btnW275();
+  text-decoration: none;
+}
+
+.wrapImg {
+  width: 100%;
+  max-width: 400px;
+  line-height: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .wrapImg {
+    max-width: 500px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .container {
+    @include display.displayFlex($direction: row, $alignItems: center, $justifyContent: space-between);
+  }
+
+  .wrapTitle {
+    margin-bottom: 0;
+  }
+
+  .wrapImg {
+    max-width: 700px;
+  }
+}

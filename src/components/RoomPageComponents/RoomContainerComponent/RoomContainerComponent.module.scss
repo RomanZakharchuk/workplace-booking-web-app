@@ -1,0 +1,50 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+
+.roomContainer {
+  width: 100%;
+  background: colors.$white-lilac2;
+  border-radius: 15px;
+  @include display.displayFlex($justifyContent: space-between, $alignItems: center);
+  padding: 15px 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.container {
+  @include display.displayFlex($alignItems: center);
+}
+
+.textContainer {
+  h4 {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    color: colors.$dove-gray;
+  }
+
+  p {
+    @include fonts.regular();
+    @include fontsSize.textSize14();
+    color: colors.$silver;
+  }
+
+  &:first-child {
+    margin-right: 60px;
+  }
+}
+
+.bucketContainer {
+  width: 25px;
+  height: 25px;
+  line-height: 0;
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

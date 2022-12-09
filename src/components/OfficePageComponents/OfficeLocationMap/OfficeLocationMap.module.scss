@@ -1,0 +1,12 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.wrapMap {
+  width: 427px;
+  height: 687px;
+  border: 2px solid colors.$hawkes-blue;
+  background: colors.$silver;
+  border-radius: 30px;
+  overflow: hidden;
+}

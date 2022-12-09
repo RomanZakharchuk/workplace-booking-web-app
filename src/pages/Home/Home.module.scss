@@ -1,0 +1,13 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/sizes';
+
+.home {
+  background: colors.$zircon;
+  padding: 0 12px;
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .home {
+    background: colors.$white;
+  }
+}

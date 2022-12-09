@@ -1,0 +1,17 @@
+@mixin semiBold() {
+  font-family: 'GolosTextBold', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin regular() {
+  font-family: 'GolosTextRegular', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin medium() {
+  font-family: 'GolosTextMedium', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}

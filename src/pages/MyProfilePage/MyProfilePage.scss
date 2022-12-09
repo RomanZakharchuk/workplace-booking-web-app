@@ -1,0 +1,9 @@
+@use "src/scss/modules/colors";
+
+.error-password-input {
+  border: 2px solid colors.$salmon;
+
+  &:focus {
+    border: 2px solid colors.$salmon;
+  }
+}

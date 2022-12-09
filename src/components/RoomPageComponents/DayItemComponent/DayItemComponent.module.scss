@@ -1,0 +1,38 @@
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+
+.DayItemContainer {
+  width: 68px;
+  height: 82px;
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid colors.$malibu;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+ }
+
+.wrapper {
+  @include display.displayFlex($direction: column, $justifyContent: center, $alignItems: center);
+}
+
+.dayOfWeek {
+  @include fonts.medium();
+  @include fontsSize.textSize14();
+  color: colors.$nepal;
+}
+
+.numberOfDay {
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+}

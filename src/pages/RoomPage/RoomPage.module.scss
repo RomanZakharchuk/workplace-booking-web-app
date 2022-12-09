@@ -1,0 +1,301 @@
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/letterSpacing";
+
+.content {
+  @include display.displayFlex();
+}
+
+.contentLeft {
+  width: 100%;
+  max-width: 1195px;
+  margin-right: 30px;
+  position: relative;
+}
+
+.wrapHeader {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.wrapPath {
+  @include display.displayFlex($alignItems: center);
+}
+
+.pathTitle {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$silver;
+  margin: 0 10px 0 0;
+  position: relative;
+}
+
+.pathTitleActive {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+  margin: 0 0 0 10px;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    border-bottom: 3px solid colors.$dodger-blue;
+    border-radius: 100px;
+    position: absolute;
+    top: 28px;
+    left: 0;
+  }
+}
+
+.wrapBtnAdd {
+  position: relative;
+}
+
+.btnAdd {
+  position: absolute;
+  top: -25px;
+  left: -139px;
+  @include btnStyle.btn();
+  @include btnsSize.btnW139();
+  @include fontsSize.textSize14();
+  padding-left: 20px;
+
+  &::before {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: colors.$white;
+    position: absolute;
+    top: 19px;
+    left: 18px;
+  }
+
+  &::after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: colors.$white;
+    position: absolute;
+    transform: rotate(90deg);
+    left: 18px;
+    top: 19px;
+  }
+}
+
+.activeBtnAddRoom {
+  background: rgba(73, 138, 254, 0.25);
+  transition: background-color 0.5s;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 3px solid colors.$white-lilac1;
+  margin: 4px 0 25px 0;
+}
+
+//wrapColumnNames
+.wrapColumnNames {
+  @include display.displayFlex($alignItems: center, $justifyContent: space-between);
+  height: 55px;
+  background: colors.$white-lilac1;
+  border-radius: 15px;
+  padding: 0 30px 0 30px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+.nameBlock {
+  width: 100%;
+  max-width: 150px;
+  cursor: pointer;
+}
+
+.statusBlock {
+  width: 100%;
+  max-width: 290px;
+}
+
+.seatsBlock {
+  width: 100%;
+  max-width: 150px;
+}
+
+.addressBlock {
+  width: 100%;
+  max-width: 300px;
+}
+
+.workTimeBlock {
+  width: 100%;
+  max-width: 200px;
+}
+
+.btnHide {
+  width: 20px;
+  height: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.crossBtnIcon,
+.searchBtnIcon {
+  line-height: 0;
+}
+
+//searchForm
+.wrapperForm {
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.showForm {
+  margin-bottom: 15px;
+  height: 55px;
+  transition: height 0.3s ease;
+}
+
+.searchForm {
+  position: relative;
+  svg {
+    position: absolute;
+    top: 16px;
+    left: 30px;
+  }
+}
+
+.searchInput {
+  display: block;
+  width: 100%;
+  height: 51px;
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 15px;
+  padding-left: 60px;
+  padding-right: 100px;
+  outline: none;
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+
+  &::placeholder {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01;
+    color: colors.$silver;
+  }
+}
+
+.clearBtn {
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$silver;
+
+  &:hover {
+    color: colors.$malibu;
+  }
+}
+
+// wrapperNewRoom
+.wrapperNewRoom {
+  position: relative;
+  margin-right: 15px;
+}
+
+.blockNewRoom {
+  margin-right: 15px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.showBlockNewRoom {
+  position: unset;
+}
+
+//wrapInfiniteScroll
+.wrapInfiniteScroll {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 3px;
+    background: colors.$white-lilac1;
+    border-radius: 100px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 272px;
+    right: 1px;
+    width: 3px;
+    height: 478px;
+    background: colors.$white-lilac1;
+    border-radius: 100px;
+  }
+}
+
+.wrapOffices {
+  height: 100%;
+  max-height: 632px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 10px;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-clip: content-box;
+  }
+  //
+  &::-webkit-scrollbar-thumb {
+    background: colors.$dodger-blue;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: none;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    background: colors.$dodger-blue;
+  }
+}

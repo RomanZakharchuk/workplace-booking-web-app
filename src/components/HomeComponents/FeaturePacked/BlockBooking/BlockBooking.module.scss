@@ -1,0 +1,57 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+@use 'src/scss/modules/display';
+
+.blockBooking {
+  width: 100%;
+  max-width: 351px;
+  background: colors.$dodger-blue;
+  border-radius: 20px;
+  padding: 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__inner {
+    @include display.displayFlex($justifyContent: start, $alignItems: center);
+    margin-bottom: 10px;
+  }
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h3Size20();
+  letter-spacing: letterSpacing.$letter017;
+  color: colors.$white;
+  margin-left: 18px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  color: colors.$white;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .blockBooking {
+    &:first-child {
+      margin-right: 24px;;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .blockBooking {
+    &:not(:last-child) {
+      margin: 0 24px 0 0;
+    }
+  }
+}

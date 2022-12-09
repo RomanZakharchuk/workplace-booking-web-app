@@ -1,0 +1,141 @@
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/btnsSize';
+@use 'src/scss/modules/btnStyle';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+@use 'src/scss/modules/input';
+
+.landingForm {
+  @include display.displayFlex($direction: column, $alignItems: center);
+  padding-top: 75px;
+}
+
+.wrapText {
+  max-width: 351px;
+  margin-bottom: 73px;
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$black;
+  margin-bottom: 10px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+}
+
+.form {
+  @include display.displayFlex($direction: column, $alignItems: center);
+
+  &__text {
+    @include fonts.regular();
+    @include fontsSize.textSize16();
+    text-align: center;
+    letter-spacing: letterSpacing.$letter01;
+    color: colors.$black;
+    margin: 30px 0 25px 0;
+  }
+}
+
+.inputContainer {
+  margin-bottom: 10px;
+}
+
+.inputContainer,
+.selectContainer, {
+  width: 351px;
+}
+
+.inputNamesContainer {
+  margin-bottom: 10px;
+}
+
+.inputNameContainer {
+  width: 351px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.input {
+  @include input.input();
+}
+
+.btn {
+  @include btnsSize.btnW275();
+  @include btnStyle.btn();
+  margin: 30px auto 0 auto;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: rgba(102, 102, 102, 0.25);
+  margin-top: 75px;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .wrapText {
+    max-width: 580px;
+  }
+
+  .title {
+    @include fontsSize.h2Size36();
+  }
+
+  .inputNamesContainer {
+    width: 580px;
+    @include display.displayFlex($justifyContent: space-between);
+  }
+
+  .inputNameContainer {
+    width: 49%;
+  }
+
+  .inputContainer,
+  .selectContainer {
+    width: 580px;
+  }
+
+  .firstName,
+  .lastName {
+    display: inline;
+    width: 275px;
+  }
+
+  .input,
+  .firstName,
+  .lastName {
+    margin-bottom: 20px;
+  }
+
+  .firstName {
+    margin-right: 30px;
+  }
+
+  .btn {
+    margin: 62px auto 0 auto;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .landingForm {
+    padding: 100px 0;
+  }
+
+  .line {
+    display: none;
+  }
+}

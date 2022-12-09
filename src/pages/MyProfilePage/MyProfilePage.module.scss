@@ -1,0 +1,231 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/display";
+@use "src/scss/modules/letterSpacing";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/sizes";
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  line-height: 48px;
+  color: colors.$big-stone;
+  margin-bottom: 33px;
+}
+
+.wrapPath {
+  @include display.displayFlex($alignItems: center);
+}
+
+.pathTitle {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$dove-gray;
+  margin: 0 10px 5px 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    border-bottom: 3px solid colors.$dodger-blue;
+    position: absolute;
+    top: 28px;
+    left: 0;
+  }
+}
+
+.line {
+  width: 100%;
+  border-bottom: 2px solid colors.$hawkes-blue;
+  margin-bottom: 25px;
+}
+
+.form {
+  max-width: 427px;
+  min-height: 555px;
+  @include display.displayFlex($direction: column, $justifyContent: space-between);
+  background: colors.$white;
+  border: 2px solid colors.$hawkes-blue;
+  border-radius: 25px;
+  padding: 25px 20px 30px 20px;
+}
+
+.label {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  padding: 0 0 10px 23px;
+}
+
+.wrapUpload {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.imageInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputUpload {
+  width: 100%;
+  max-width: 251px;
+  @include display.displayFlex($alignItems: center);
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+  cursor: pointer;
+  margin-right: 5px;
+  overflow: hidden;
+}
+
+.wrapImgUser {
+  width: 55px;
+  height: 55px;
+  line-height: 0;
+  border-radius: 15px;
+  background: colors.$white-lilac1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.errorMsg {
+  @include fonts.regular();
+  font-size: 12px;
+  color: colors.$salmon;
+  //margin: 5px 0 0 25px;
+  margin-top: 5px;
+}
+
+.input {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+}
+
+.input,
+.inputUpload {
+  height: 55px;
+  background: colors.$white-lilac1;
+  border: 2px solid colors.$white-lilac2;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 20px;
+
+  &::placeholder {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01;
+    color: colors.$gray;
+  }
+
+  &:focus {
+    border: 2px solid colors.$dodger-blue;
+  }
+}
+
+.wrapFile {
+  @include display.displayFlex($direction: column);
+}
+
+.wrapName {
+  @include display.displayFlex($direction: column);
+}
+
+.wrapEmail {
+  @include display.displayFlex($direction: column);
+  position: relative;
+
+  svg {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+  }
+}
+
+.btn {
+  display: block;
+  @include btnsSize.btnW130();
+  @include btnStyle.btn();
+}
+
+.wrapFile,
+.wrapEmail {
+  width: 100%;
+  max-width: 387px;
+}
+
+.wrapName {
+  width: 100%;
+  max-width: 387px;
+  margin-bottom: 20px;
+
+  &:not(:last-child) {
+    margin-right: 9px;
+  }
+}
+
+.wrapFile,
+.wrapNames,
+.wrapEmail {
+  margin-bottom: 20px;
+}
+
+.errorText {
+  @include fonts.regular();
+  font-size: 12px;
+  color: colors.$salmon;
+  margin: 5px 0 0 15px;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .wrapNames {
+    @include display.displayFlex();
+  }
+
+  .wrapPasswords {
+    @include display.displayFlex();
+  }
+
+  .inputUpload {
+    max-width: 320px;
+  }
+
+  .wrapName,
+  .wrapPassword {
+    max-width: 189px;
+    margin-bottom: 0;
+  }
+}
+
+.emailInput {
+  cursor: no-drop;
+}
+
+.btnGroup {
+  @include display.displayFlex($justifyContent: space-between, $alignItems: center);
+}
+
+.requestPasswordContainer {
+  @include display.displayFlex($alignItems: center);
+  cursor: pointer;
+}
+
+.sendIconContainer {
+  line-height: 0;
+  margin-right: 5px;
+}
+
+.requestPasswordText {
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter006;
+}

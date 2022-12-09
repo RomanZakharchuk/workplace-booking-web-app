@@ -1,0 +1,45 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.popupAboutManager {
+  position: absolute;
+  left: -70px;
+  z-index: 1;
+  background: colors.$white;
+  border: 1px solid colors.$dodger-blue;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px 25px;
+}
+
+.wrapUserImg {
+  width: 35px;
+  height: 35px;
+  opacity: 0.75;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto 10px auto;
+  background: #A5A5A5;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title,
+.text {
+  @include fonts.medium();
+  color: colors.$dove-gray;
+}
+
+.title {
+  @include fontsSize.textSize16();
+  margin-bottom: 10px;
+}
+
+.text {
+  @include fontsSize.textSize14();
+  margin-bottom: 5px;
+}

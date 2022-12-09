@@ -1,0 +1,19 @@
+@use "src/scss/modules/sizes";
+
+.header {
+  padding-top: 25px;
+  margin-bottom: 75px;
+  position: relative;
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .header {
+    margin-bottom: 100px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .header {
+    margin-bottom: 156px;
+  }
+}

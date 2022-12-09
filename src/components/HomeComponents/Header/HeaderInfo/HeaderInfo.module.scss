@@ -1,0 +1,90 @@
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/btnStyle';
+@use 'src/scss/modules/btnsSize';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+
+.wrapper {
+  @include display.displayFlex($direction: column, $alignItems: center);
+}
+
+.wrapText {
+  @include display.displayFlex($direction: column, $alignItems: center);
+  //max-width: 580px;
+  max-width: 351px;
+}
+
+.title {
+  @include fontsSize.h1Size36();
+  @include fonts.semiBold();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$big-stone;
+  margin-bottom: 20px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+  margin-bottom: 30px;
+}
+
+.link {
+  @include btnsSize.btnW275();
+  @include btnStyle.btn();
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+  margin: 0 auto 50px;
+}
+
+.wrapImg {
+  max-width: 349px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .wrapText {
+    max-width: 454px;
+  }
+
+  .title {
+    @include fontsSize.h1Size40();
+  }
+
+  .wrapImg {
+    max-width: 488px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .wrapper {
+    flex-direction: row;
+    justify-content: center;
+
+  }
+
+  .title,
+  .text {
+    text-align: start;
+  }
+
+  .link {
+    margin: 0;
+  }
+
+  .wrapText {
+    align-items: start;
+  }
+
+  .wrapImg {
+    max-width: 580px;
+  }
+}

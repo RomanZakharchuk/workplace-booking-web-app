@@ -1,0 +1,21 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/display";
+
+.wrap {
+  width: 427px;
+  height: 687px;
+  border: 2px solid colors.$hawkes-blue;
+  background: colors.$white;
+  border-radius: 30px;
+  @include display.displayFlex($alignItems: center, $justifyContent: center);
+}
+
+.text {
+  width: 100%;
+  max-width: 201px;
+  @include fonts.medium();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+}

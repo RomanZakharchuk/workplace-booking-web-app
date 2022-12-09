@@ -1,0 +1,23 @@
+import { FC } from "react";
+
+type PropsType = {
+    colorIconDocument: string
+}
+
+const DocumentSvg: FC<PropsType> = ({colorIconDocument}) => {
+    return (
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.6967 11.7725H6.28174" stroke={colorIconDocument} strokeWidth="1.5" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path d="M11.6967 8.95215H6.28174" stroke={colorIconDocument} strokeWidth="1.5" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path d="M8.34848 6.13281H6.28223" stroke={colorIconDocument} strokeWidth="1.5" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path fillRule="evenodd" clipRule="evenodd"
+                  d="M2.70752 9C2.70752 14.2027 4.28102 15.9375 9.00077 15.9375C13.7213 15.9375 15.294 14.2027 15.294 9C15.294 3.79725 13.7213 2.0625 9.00077 2.0625C4.28102 2.0625 2.70752 3.79725 2.70752 9Z"
+                  stroke={colorIconDocument} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export { DocumentSvg };

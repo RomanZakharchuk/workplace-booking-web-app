@@ -1,0 +1,19 @@
+@use "src/scss/modules/sizes";
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/letterSpacing";
+
+.notice {
+  @include fonts.semiBold();
+  @include fontsSize.h3Size20();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$de-york;
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .notice {
+    text-align: start;
+  }
+}

@@ -1,0 +1,23 @@
+@use "src/scss/modules/display";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/colors";
+
+.wrapper {
+  @include display.displayFlex($alignItems: center);
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.textSize14();
+  color: colors.$nepal;
+  margin-right: 5px;
+}
+
+.wrap {
+  @include display.displayFlex($direction: column);
+
+  & > svg:first-child {
+    margin-bottom: 2px;
+  }
+}

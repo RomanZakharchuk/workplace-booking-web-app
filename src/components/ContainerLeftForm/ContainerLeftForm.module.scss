@@ -1,0 +1,16 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+
+.containerLeftForm {
+  position: relative;
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h3Size20();
+  color: colors.$nepal;
+  position: relative;
+  top: -17px;
+  margin-bottom: 32px;
+}

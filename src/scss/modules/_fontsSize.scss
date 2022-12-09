@@ -1,0 +1,39 @@
+@mixin h3Size20() {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin h2Size32() {
+  font-size: 32px;
+  line-height: 35px;
+}
+
+@mixin h2Size36() {
+  font-size: 36px;
+  line-height: 64px;
+}
+
+@mixin h1Size36() {
+  font-size: 36px;
+  line-height: 35px;
+}
+
+@mixin h1Size40() {
+  font-size: 40px;
+  line-height: 125%;
+}
+
+@mixin textSize14() {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin textSize16() {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin textSize18() {
+  font-size: 18px;
+  line-height: 20px;
+}

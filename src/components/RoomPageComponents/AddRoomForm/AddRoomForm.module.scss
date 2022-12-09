@@ -1,0 +1,120 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/letterSpacing";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/btnsSize";
+
+.formContainer {
+  width: 427px;
+  height: 687px;
+  border: 2px solid colors.$hawkes-blue;
+  background: colors.$white;
+  border-radius: 30px;
+  padding: 25px 20px 25px 20px;
+  @include display.displayFlex($direction: column, $justifyContent: space-between);
+}
+
+.wrapBtn {
+  @include display.displayFlex($direction: column, $alignItems: flex-end);
+}
+
+.btnCancel,
+.btnAdd {
+  height: 56px;
+}
+
+.btnAdd {
+  width: 100%;
+}
+
+.btnCancel {
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter006;
+  color: colors.$tropical-blue;
+  margin: 0 auto;
+
+  &:hover {
+    color: colors.$dodger-blue;
+  }
+}
+
+.btnAdd {
+  @include btnStyle.btn();
+}
+
+.label {
+  display: inline-block;
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+  padding: 0 0 10px 23px;
+}
+
+.nameContainer {
+  @include display.displayFlex($direction: column);
+}
+
+.workingTimeContainer {
+  @include display.displayFlex($justifyContent: space-between);
+}
+
+.wrapInputOpenFrom,
+.wrapInputCloseTo {
+  width: 49%;
+}
+
+.statusContainer {
+  @include display.displayFlex($direction: column);
+}
+
+.nameContainer,
+.daysOfWeekContainer {
+  margin-bottom: 20px;
+}
+
+.workingTimeContainer {
+  margin-bottom: 10px;
+}
+
+.input {
+  height: 55px;
+  background: colors.$white-lilac1;
+  border: 2px solid colors.$white-lilac2;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 20px;
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$dove-gray;
+
+  &::placeholder {
+    @include fonts.medium();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01;
+    color: colors.$gray;
+    opacity: 100;
+    transition: opacity 0.5s;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  &:focus {
+    border: 2px solid colors.$dodger-blue;
+  }
+}
+
+.daysOfWeekContainer {
+  @include display.displayFlex($justifyContent: space-between);
+}

@@ -1,0 +1,23 @@
+import { FC } from "react";
+
+type PropsType = {
+    currentInputFocused: string;
+}
+
+const BigDocumentSvg: FC<PropsType> = ({ currentInputFocused }) => {
+    return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.4947 19.6201H10.4697" stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path d="M19.4947 14.9209H10.4697" stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path d="M13.914 10.2217H10.4702" stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round"
+                  strokeLinejoin="round" />
+            <path fillRule="evenodd" clipRule="evenodd"
+                  d="M4.5127 15C4.5127 23.6712 7.13519 26.5625 15.0014 26.5625C22.8689 26.5625 25.4902 23.6712 25.4902 15C25.4902 6.32875 22.8689 3.4375 15.0014 3.4375C7.13519 3.4375 4.5127 6.32875 4.5127 15Z"
+                  stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export { BigDocumentSvg };

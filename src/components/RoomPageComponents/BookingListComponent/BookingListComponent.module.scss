@@ -1,0 +1,108 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/display";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+
+.bookingListContainer {
+  width: 427px;
+  height: 687px;
+  border: 2px solid colors.$hawkes-blue;
+  background: colors.$white;
+  border-radius: 30px;
+  padding: 25px 20px 25px 20px;
+}
+
+.headerContainer {
+  @include display.displayFlex();
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize14();
+  color: colors.$silver;
+}
+
+.numberRoomContainer {
+  margin-left: 20px;
+  margin-right: 60px;
+  @include display.displayFlex($alignItems: center);
+
+  & > p {
+    margin-right: 5px;
+  }
+}
+
+.sortDirection {
+  @include display.displayFlex($direction: column);
+
+  svg {
+    &:first-child {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.roomsContainer {
+  height: 100%;
+  max-height: 601px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 113px;
+    right: 22px;
+    width: 5px;
+    height: 601px;
+    background: colors.$white-lilac1;
+    border-radius: 100px;
+  }
+}
+
+.wrapBookingList {
+  height: 100%;
+  max-height: 632px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 20px;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-clip: content-box;
+  }
+  //
+  &::-webkit-scrollbar-thumb {
+    background: colors.$dodger-blue;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: none;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    background: colors.$dodger-blue;
+  }
+}

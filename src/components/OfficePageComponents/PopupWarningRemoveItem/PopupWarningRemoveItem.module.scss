@@ -1,0 +1,97 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/btnsSize";
+@use "src/scss/modules/btnStyle";
+@use "src/scss/modules/display";
+
+.wrapperPopupWarningContainer {
+  width: 100%;
+  max-width: 637px;
+  background: colors.$zumthor;
+  border: 3px solid colors.$white;
+  border-radius: 30px;
+  position: relative;
+  z-index: 4;
+}
+
+.headerContainer {
+  margin: 30px 0 28px 0;
+  position: relative;
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h3Size20();
+  color: colors.$big-stone;
+  text-align: center;
+}
+
+.btnClose {
+  position: absolute;
+  right: 22px;
+  top: 2px;
+  padding: 3px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.warningContainer {
+  background: colors.$white;
+  border: 2px solid colors.$white-lilac2;
+  margin: 0 15px;
+  border-radius: 15px;
+  padding: 50px;
+}
+
+.warningInner {
+  background: colors.$fair-pink;
+  border-radius: 15px;
+  padding: 25px 35px;
+  margin-bottom: 35px;
+}
+
+.warningText {
+  @include fonts.medium();
+  @include fontsSize.textSize16();
+  color: colors.$salmon;
+}
+
+.wrapperBtn {
+  position: relative;
+  margin: 0 auto;
+  @include btnStyle.btn();
+  @include btnsSize.btnW114();
+}
+
+.wrapperSvg {
+  position: absolute;
+  line-height: 0;
+  top: 10px;
+  left: 16px;
+}
+
+.textBtn {
+  position: absolute;
+  top: 9px;
+  right: 18px;
+}
+
+.btnCancel {
+  display: block;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 5px;
+  margin: 15px auto;
+  @include fonts.semiBold();
+  @include fontsSize.textSize14();
+  color: colors.$silver-chalice;
+  cursor: pointer;
+
+  &:hover {
+    color: colors.$dove-gray;
+  }
+}

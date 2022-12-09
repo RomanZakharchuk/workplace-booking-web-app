@@ -1,0 +1,72 @@
+@use 'src/scss/modules/colors';
+@use 'src/scss/modules/fonts';
+@use 'src/scss/modules/fontsSize';
+@use 'src/scss/modules/display';
+@use 'src/scss/modules/sizes';
+@use 'src/scss/modules/letterSpacing';
+
+.backgroundContainer {
+  background-size: cover;
+  background: url("../../../../src/assets/png/Union2.png") no-repeat center;
+  @include display.displayFlex($direction: column, $alignItems: center);
+  border-radius: 50px;
+  margin: 50px 0;
+}
+
+.wrapper {
+  max-width: 351px;
+  @include display.displayFlex($direction: column, $alignItems: center);
+  padding: 75px 0;
+  margin: 0 auto;
+}
+
+.title {
+  @include fonts.semiBold();
+  @include fontsSize.h2Size32();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$white;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.text {
+  @include fonts.regular();
+  @include fontsSize.textSize16();
+  text-align: center;
+  letter-spacing: letterSpacing.$letter01;
+  color: colors.$white;
+  margin-bottom: 40px;
+}
+
+.link {
+  width: 275px;
+  height: 56px;
+  background: colors.$white;
+  color: colors.$dodger-blue;
+  border-radius: 100px;
+  @include fonts.semiBold();
+  @include fontsSize.textSize16();
+  @include display.displayFlex($justifyContent: center, $alignItems: center);
+}
+
+@media all and (min-width: sizes.$TABLE_WIDTH) {
+  .wrapper {
+    padding: 90px 0;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 125%;
+  }
+
+  .text {
+    margin-bottom: 49px;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .wrapper {
+    max-width: 580px;
+  }
+}

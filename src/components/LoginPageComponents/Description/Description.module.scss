@@ -1,0 +1,45 @@
+@use "src/scss/modules/colors";
+@use "src/scss/modules/fonts";
+@use "src/scss/modules/fontsSize";
+@use "src/scss/modules/sizes";
+@use "src/scss/modules/letterSpacing";
+
+.wrapper {
+  width: 100%;
+  max-width: 517px;
+  margin-bottom: 50px;
+
+  h1, p {
+    text-align: center;
+  }
+
+  h1 {
+    @include fonts.semiBold();
+    @include fontsSize.h2Size32();
+    color: colors.$big-stone;
+    margin-bottom: 10px;
+  }
+
+  p {
+    @include fonts.regular();
+    @include fontsSize.textSize16();
+    letter-spacing: letterSpacing.$letter01;
+    color: colors.$dove-gray;
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_WIDTH) {
+  .wrapper {
+    h1 {
+      @include fontsSize.h1Size36();
+    }
+  }
+}
+
+@media all and (min-width: sizes.$LAPTOP_XL_WIDTH) {
+  .wrapper {
+    h1, p {
+      text-align: start;
+    }
+  }
+}

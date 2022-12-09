@@ -1,0 +1,32 @@
+import { FC } from "react";
+
+type PropsType = {
+    currentInputFocused: string;
+}
+
+const BigUserSvg: FC<PropsType> = ({ currentInputFocused }) => {
+    return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd"
+                  d="M14.9655 25.4611C10.9168 25.4611 7.45801 24.8486 7.45801 22.3961C7.45801 19.9436 10.8943 17.8086 14.9655 17.8086C19.0143 17.8086 22.473 19.9236 22.473 22.3748C22.473 24.8261 19.0368 25.4611 14.9655 25.4611Z"
+                  stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path fillRule="evenodd" clipRule="evenodd"
+                  d="M14.9654 14.3112C17.6229 14.3112 19.7779 12.1575 19.7779 9.5C19.7779 6.8425 17.6229 4.6875 14.9654 4.6875C12.3079 4.6875 10.1529 6.8425 10.1529 9.5C10.1454 12.1475 12.2829 14.3025 14.9316 14.3112H14.9654Z"
+                  stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+                d="M22.9526 12.9903C24.4989 12.5765 25.6389 11.1665 25.6389 9.48777C25.6389 7.73652 24.3976 6.27402 22.7451 5.93652"
+                stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+                d="M23.6787 16.9307C25.8712 16.9307 27.7437 18.4169 27.7437 19.7444C27.7437 20.5257 27.0975 21.3769 26.1175 21.6069"
+                stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+                d="M6.97949 12.9903C5.43199 12.5765 4.29199 11.1665 4.29199 9.48777C4.29199 7.73652 5.53449 6.27402 7.18574 5.93652"
+                stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+                d="M6.25201 16.9307C4.05951 16.9307 2.18701 18.4169 2.18701 19.7444C2.18701 20.5257 2.83326 21.3769 3.81451 21.6069"
+                stroke={currentInputFocused} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export { BigUserSvg };
